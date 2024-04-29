@@ -1,0 +1,229 @@
+@import "_base";
+
+header {
+  background: transparent;
+  width: 100%;
+  left: 0;
+  top: 0;
+
+  .header-content {
+    display: flex;
+    height: 116px;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 6px;
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    &__links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      list-style-position: inside;
+
+      &.bottom {
+        gap: 15px;
+        a{
+          color: $active-regular;
+        }
+
+        li {
+          text-transform: lowercase;
+          position: relative;
+          font-weight: 700;
+          
+          &:after{
+            content: '';
+            position: absolute;
+            display: block;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: $accent;
+            transition: all 0.3s;
+          }
+
+          &.active, &:hover{
+            a {
+              color: $accent;
+            }
+            &:after{
+              width: 100%;
+            }
+          }
+        }
+      }
+      
+      li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+
+        a {
+          color: $grey-text;
+          &[href^="tel"] {
+            font-weight: 700;
+          }
+        }
+
+        &:not(.custom-li)::before {
+          content: "";
+          display: inline-flex;
+          border-radius: 50%;
+          background: $grey-separator;
+          width: 6px;
+          height: 6px;
+          margin: 0 6px;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .lang-btn{
+      color: $grey-text;
+      &.active {
+        color: $white;
+        background: $accent;
+      }
+    }
+  }
+}
+
+.contact-form {
+  max-width: 510px;
+  width: 100%;
+  border-radius: 12px;
+  background: $grey-bg;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  .caps{
+    color: $grey-text;
+    margin-top: 15px;
+  }
+  button{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+}
+
+.contact-block {
+  display: flex;
+  justify-content: space-between;
+  margin-top: calc(116px - 60px);
+  gap: 60px;
+  padding: 0 120px;
+  margin-bottom: 60px;
+  .lc {
+    width: 100%;
+    h3{
+      color: $main-alt;
+      font-weight: 400;
+      white-space: pre-line;
+      padding-bottom: 30px;
+    }
+    .border{
+      border-top: 4px solid $grey-separator;
+      padding-bottom: 30px;
+    }
+
+    .caps{
+      display: flex;
+      flex-direction: row;
+      p{
+        white-space: pre-line;
+      }
+      
+    }
+
+    .mail{
+      padding-bottom: 30px;
+    }
+
+    .contact{
+      a{
+        font-size: 21px;
+        color: $main-alt;
+        padding-bottom: 15px;
+      }
+    }
+  }
+}
+
+footer{
+  background: $grey-bg;
+  width: 100%;
+  left: 0;
+  top: 0;
+  
+  .footer-content{
+    display: flex;
+    height: 139px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 6px;
+    padding: 30px 0;
+
+    p{
+      color: $grey-text;
+    }
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    &__links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      list-style-position: inside;
+
+      &.bottom {
+        gap: 15px;
+        li {
+          text-transform: lowercase;
+          font-weight: 700;
+        }
+      }
+      
+      li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+
+        a {
+          &[href^="tel"] {
+            font-weight: 700;
+            color: $main-alt;
+          }
+          &[href^="mailto"] {
+            font-weight: 700;
+          }
+        }
+
+        &:not(.custom-li)::before {
+          content: "";
+          display: inline-flex;
+          border-radius: 50%;
+          background: $grey-text;
+          width: 6px;
+          height: 6px;
+          margin: 0 6px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

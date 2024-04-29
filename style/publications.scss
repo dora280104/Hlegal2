@@ -1,0 +1,493 @@
+@import "_base";
+
+header {
+  background: transparent;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding-bottom: 60px;
+
+  .header-content {
+    display: flex;
+    height: 116px;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 6px;
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    &__links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      list-style-position: inside;
+
+      &.bottom {
+        gap: 15px;
+        a {
+          color: $active-regular;
+        }
+
+        li {
+          text-transform: lowercase;
+          position: relative;
+          font-weight: 700;
+
+          &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: $accent;
+            transition: all 0.3s;
+          }
+
+          &.active,
+          &:hover {
+            a {
+              color: $accent;
+            }
+            &:after {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+
+        a {
+          color: $grey-text;
+          &[href^="tel"] {
+            font-weight: 700;
+          }
+        }
+
+        &:not(.custom-li)::before {
+          content: "";
+          display: inline-flex;
+          border-radius: 50%;
+          background: $grey-separator;
+          width: 6px;
+          height: 6px;
+          margin: 0 6px;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .lang-btn {
+      color: $grey-text;
+      &.active {
+        color: $white;
+        background: $accent;
+      }
+    }
+  }
+}
+
+section {
+  background: $grey-bg;
+
+  .container {
+    padding-top: 32px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  h1 {
+    padding: 10px 0 30px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 30px;
+    padding-top: 32px;
+    padding-bottom: 30px;
+
+    .grid-item {
+      width: 360px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: $white;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+
+
+      img {
+        width: 420px;
+        height: 200px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+
+      .grid-content {
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+
+        h4 {
+          color: $active-regular;
+          width: 360px;
+          padding-bottom: 15px;
+        }
+
+        p {
+          width: 360px;
+        }
+
+        .caps {
+          text-transform: uppercase;
+          color: $grey-text;
+          font-weight: 700;
+          padding-bottom: 15px;
+        }
+
+        .border {
+          border-top: 4px solid $grey-separator;
+          padding: 15px 0;
+        }
+      }
+    }
+  }
+  @media (min-width: 1700px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      grid-template-rows: repeat(2, auto);
+      justify-content: center;
+      align-items: center;
+      grid-gap: 30px;
+      padding-top: 32px;
+      padding-bottom: 30px;
+  
+      .grid-item {
+        width: 513px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: $white;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+  
+  
+        img {
+          width: 513px;
+          height: 200px;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+        }
+  
+        .grid-content {
+          display: block;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 30px;
+  
+          h4 {
+            color: $active-regular;
+            width: 453px;
+            padding-bottom: 15px;
+          }
+  
+          p {
+            width: 453px;
+          }
+  
+          .caps {
+            text-transform: uppercase;
+            color: $grey-text;
+            font-weight: 700;
+            padding-bottom: 15px;
+          }
+  
+          .border {
+            border-top: 4px solid $grey-separator;
+            padding: 15px 0;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      grid-template-rows: repeat(2, auto);
+      justify-content: center;
+      align-items: center;
+      grid-gap: 30px;
+      padding-top: 32px;
+      padding-bottom: 30px;
+  
+      .grid-item {
+        width: 281px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: $white;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+  
+  
+        img {
+          width: 281px;
+          height: 200px;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+        }
+  
+        .grid-content {
+          display: block;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 30px;
+  
+          h4 {
+            color: $active-regular;
+            width: 221px;
+            padding-bottom: 15px;
+          }
+  
+          p {
+            width: 221px;
+          }
+  
+          .caps {
+            text-transform: uppercase;
+            color: $grey-text;
+            font-weight: 700;
+            padding-bottom: 15px;
+          }
+  
+          .border {
+            border-top: 4px solid $grey-separator;
+            padding: 15px 0;
+          }
+        }
+      }
+    }
+  }
+
+  .primary-btn{
+    padding-bottom: 60px;
+  }
+  .btn-group{
+    background: $grey-separator;
+    width: 233px;
+    height: 42px;
+    border-radius: 10px;
+    padding: 2px;
+    
+    .btn{
+        border-radius: 10px;
+        font-weight: 700px;
+        width: 122px;
+        height: 38px;
+        color: $main;
+        background: $grey-separator;
+        padding: 8px 30px;
+        
+        &.active{
+            width: 105px;
+            background: $white;
+        }
+
+        &:hover {
+          background: $grey-bg;
+        }
+    }
+  }
+
+  @media (max-width: 768px) {
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      grid-template-rows: repeat(3, auto);
+      justify-content: center;
+      align-items: center;
+      grid-gap: 30px;
+      padding-top: 32px;
+      padding-bottom: 30px;
+  
+      .grid-item {
+        width: 309px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: $white;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+  
+  
+        img {
+          width: 309px;
+          height: 200px;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+        }
+  
+        .grid-content {
+          display: block;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 30px;
+  
+          h4 {
+            color: $active-regular;
+            width: 249px;
+            padding-bottom: 15px;
+          }
+  
+          p {
+            width: 249px;
+          }
+  
+          .caps {
+            text-transform: uppercase;
+            color: $grey-text;
+            font-weight: 700;
+            padding-bottom: 15px;
+          }
+  
+          .border {
+            border-top: 4px solid $grey-separator;
+            padding: 15px 0;
+          }
+        }
+      }
+    }
+  }
+
+  .primary-btn{
+    padding-bottom: 60px;
+  }
+  .btn-group{
+    background: $grey-separator;
+    width: 233px;
+    height: 42px;
+    border-radius: 10px;
+    padding: 2px;
+    
+    .btn{
+        border-radius: 10px;
+        font-weight: 700px;
+        width: 122px;
+        height: 38px;
+        color: $main;
+        background: $grey-separator;
+        padding: 8px 30px;
+        
+        &.active{
+            width: 105px;
+            background: $white;
+        }
+
+        &:hover {
+          background: $grey-bg;
+        }
+    }
+  }
+}
+
+footer {
+  background: $grey-bg;
+  width: 100%;
+  left: 0;
+  top: 0;
+
+  .footer-content {
+    display: flex;
+    height: 139px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 6px;
+    border-top: 2px solid $grey-separator;
+    padding: 30px 0;
+
+    p {
+      color: $grey-text;
+    }
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    &__links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      list-style-position: inside;
+
+      &.bottom {
+        gap: 15px;
+        li {
+          text-transform: lowercase;
+          font-weight: 700;
+        }
+      }
+
+      li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+
+        a {
+          &[href^="tel"] {
+            font-weight: 700;
+            color: $main-alt;
+          }
+          &[href^="mailto"] {
+            font-weight: 700;
+          }
+        }
+
+        &:not(.custom-li)::before {
+          content: "";
+          display: inline-flex;
+          border-radius: 50%;
+          background: $grey-text;
+          width: 6px;
+          height: 6px;
+          margin: 0 6px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+
